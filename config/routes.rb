@@ -1,8 +1,16 @@
 SampleApp::Application.routes.draw do
 
-get "static_pages/home"
-get "static_pages/help"
-get "static_pages/about"
+  get "users/new"
+
+root to: 'static_pages#home'
+
+match '/signup',     to: 'users#new'
+
+match '/help',       to: 'static_pages#help'
+match '/about',      to: 'static_pages#about'
+match '/newsupdate', to: 'static_pages#newsupdate'
+
+#get "static_pages/www.eecs.yorku.ca/course_archive/2014-15/W/3842/"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

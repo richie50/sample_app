@@ -1,15 +1,27 @@
 <% provide(:title, 'Home') %>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> Ruby on Rails Sample App | <%= yield(:title) %> </title>
-	</head>
-<h1>Sample App</h1>
+<form class ="navbar-form navbar-left" role="search">
+	<input type ="text" class="form-control" placeholder= "Search">
+        <button type ="submit" class="btn btn">Submit</button> 
+</form>	
+<div class = "center hero-unit">
+     
+	<h1>Welcome to , Intro to Computer Security</h1>
 <body bgcolor="#E6E6FA">
-	<p>
-		This is the home page for the 
-		<a href="http://railstutorials.org/">Ruby on Rails Tutorial</a>
-		sample application.
-	</p>
+	<h2>
+		This is the forum page for CSE 3482   
+		<a href="http://www.eecs.yorku.ca/course_archive/2014-15/W/3482/"> intro to comp sec</a>
+	</h2>
+	
+	<%= link_to "Sign up now!", signup_path , :class => "btb btn-large btn-primary" %>
+	
+	<div class="center hero unit">
+		<h3><em>Already a user? Then sign in here</em></h3>
+		<%= link_to "Sign in", '#' , :class=> "btn btn-success" %>
+	</div>
+</div>
+	
+<%= link_to image_tag("ownlogo.png", :alt => "Nerds") , 'http:///home/richie/Ruby/sample_app/app/assets/images' %>
 </body>
 </html>

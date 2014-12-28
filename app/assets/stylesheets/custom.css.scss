@@ -1,0 +1,145 @@
+@import "bootstrap";
+/* universal design note syntax error will cause whole app to crash*/
+html{
+	overflow-y: scroll;
+}
+
+body{
+	padding-top: 50px;
+	background-color: #b7e9f1;
+}
+
+section{
+	overflow: auto;
+}
+
+textarea{
+	resize: vertical;
+}
+
+.center{
+	text-align: center; /* strict Sass style  with nesting*/
+ h1{
+	margin-bottom: 10px;
+ }
+ h3{
+	margin-top: 40px;
+	margin-bottom: 10px;
+ }
+}
+
+form{
+	padding-top: -100px;
+}
+/*Buttons*/
+$DeepRed : #D12405;
+.btn-primary:hover{
+	color: $DeepRed;
+}
+
+.btn-primary{
+	border-color: #4f2b24;
+	color: 	#18FA1B;
+	font-family: monospace;
+}
+.btn-success{
+	border-color: #4f2b24;
+	color: 	#ffffff;
+	font-family: monospace;
+}
+.btn-success:hover{
+		color: $DeepRed	
+	}
+/*typograhy*/
+h1 , h2, h3, h4, h5, h6{
+	line-height: 1;
+}
+
+h1{
+	font-size: 4em;
+	letter-spacing: -3px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-family: sans-serif;
+	font-style: italic;
+}
+
+h2{
+	font-size: 1.8em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: #f698e5;
+}
+
+p{
+	font-size: 1.5em;
+	line-height: 1.8em;
+	letter-spacing: 2px;
+	text-align: center;
+}
+/* header */
+#logo{
+	float: left;
+	margin-right: 10px;
+	font-size: 1.8em;
+	color: #e0ca38;
+	text-transform: uppercase;
+	letter-spacing: -2px;
+	font-weight: bold;
+	line-height: 2;
+}
+#logo:hover {
+	color: #e0ca38;
+	text-decoration: none;
+}
+/* footer notes */
+$DarkBlue : #1442fb;
+footer{
+	margin-top : 250px;
+	padding-top: 10px;
+	border-top: 2px solid #010606;
+	color: $DarkBlue;
+}
+footer a{
+	color: $DarkBlue;
+}
+$pink : #FB1436;
+footer a:hover{
+	color: pink; 
+}
+footer small{
+	float: right;
+	padding-top: 2px;
+}
+footer ul{
+	padding-top: 2px;
+	float :left;
+	list-style: none;
+}
+footer ul li{
+	float: left;
+	margin-left: 8px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
