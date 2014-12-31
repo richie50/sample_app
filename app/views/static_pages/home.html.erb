@@ -1,6 +1,25 @@
 <% provide(:title, 'Home') %>
 <!DOCTYPE html>
 <html>
+<script type="text/javascript">
+      var today = new Date();
+      var current_time = today.getHours();
+      var greeting;
+      if (current_time > 18) {
+        //code
+        greeting = 'Good Evening!';
+      }else if (current_time > 12) {
+        //code
+        greeting = 'Good Afternoon!';
+      }else if (current_time > 0) {
+        //code
+        greeting = 'Good Morning!';
+      }else{
+        greeting ='Welcome';
+      }
+      document.write('<h1>' + greeting + '</h1>');
+</script>
+  
 <form class ="navbar-form navbar-left" role="search">
 	<input type ="text" class="form-control" placeholder= "Search">
         <button type ="submit" class="btn btn">Submit</button> 
@@ -20,6 +39,7 @@
 		<h3><em>Already a user? Then sign in here</em></h3>
 		<%= link_to "Sign in", '#' , :class=> "btn btn-success" %>
 	</div>
+	
 </div>
 	
 <%= link_to image_tag("ownlogo.png", :alt => "Nerds") , 'http:///home/richie/Ruby/sample_app/app/assets/images' %>
