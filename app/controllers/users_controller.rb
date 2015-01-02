@@ -8,16 +8,6 @@ class UsersController < ApplicationController
   end
   
   def create
-	@user = User.new(params[:users])
-  	if @user.save
-	  #Suucess creating account
-	    #redirect_to @user
-	 else
-	   render 'new'
-	end     
-  end
-  
-  def create
 	@user = User.new(params[:user])
   	if @user.save
 	  #Suucess creating accou
