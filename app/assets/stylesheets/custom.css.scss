@@ -31,6 +31,16 @@ textarea{
 form{
 	padding-top: -100px;
 }
+nav{
+	position: relative;
+	
+}
+
+@mixin box_sizing{
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+}
 /*Buttons*/
 $DeepRed : #D12405;
 .btn-primary:hover{
@@ -50,6 +60,23 @@ $DeepRed : #D12405;
 .btn-success:hover{
 		color: $DeepRed	
 	}
+
+	/*sidebar*/
+aside{
+	section{
+		padding:  10px;
+		border-top: 1px solid #d3d3d3;
+		&:first-child{
+			border:  0px;
+			padding-top: 0;
+		}
+		span{
+			display: block;
+			margin-bottom: 3px;
+			line-height: 1;
+		}
+	}
+}
 /*typograhy*/
 h1 , h2, h3, h4, h5, h6{
 	line-height: 1;
@@ -123,12 +150,51 @@ footer ul li{
 	margin-left: 8px;
 }
 
+/*misc */
+.debug_dump{
+	clear: both;
+	float: left;
+	width: 100%;
+	margin-top: 45px;
+	//@include box_sizing;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
+/*images with gravater*/
+.gravatar{
+	float:left;
+	margin-right: 10px;
+}
 
+/* forms */
 
+input, textarea , select, .uneditable-input{
+	//text-align: center;
+	border: 1px solid #bbb;
+	width: 100%;
+	padding: 10px;
+	height: auto;
+	margin-bottom: 15px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	//@include box_sizing;
+}
 
+#error_explanation{
+	color: #f00;
+	ul{
+		list-style: none;
+		margin: 0 0 20px 0;
+	}
+}
 
-
+.field_with_errors{
+	@extend .control-group;
+	@extend .error;
+}
 
 
 
