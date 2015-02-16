@@ -6,10 +6,11 @@ class SessionsController < ApplicationController
   
   def create
     #find user by session with email note user already exist in the database
-    user = User.find_by_email(params[:session][:email])
+    user = User.find_by_email(params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       #then user exist give access
       sign_in user
+      #remember user
       redirect_to user
     else
       flash.now[:error] = 'Invalid email or password'
@@ -19,6 +20,7 @@ class SessionsController < ApplicationController
   
   def destroy
     #when user clicks on the sign out from the drop down menu
+    #sign_out if signed_in?
     sign_out
     redirect_to root_path
   end
