@@ -15,7 +15,7 @@ describe "User Pages" do
 		end
 	end
   	
-  	describe "with valid information" do
+  describe "with valid information" do
 		before do
 			fill_in "Name", 	with: "Example User"
 			fill_in "Email" ,	with: "user@example.com"
@@ -24,13 +24,27 @@ describe "User Pages" do
 		end
 		it "should create a user" do
 			expect  { click_button submit }.to change(User, :count).by(1)
-		end	
+		end
+		 
+		describe "after saving the user" do
+			before { click_button submit }
+			let(:user) { User.find_by_email('user@example.com') }
+	
+			it { should have_selector('title', text: user.name) }
+			it { should have_selector('div.alert.alert-success', text: 'Welcome') }
+			it { should have_link('Sign out') }
+		end
+		
+		#describe "followed by signout" do
+			#before { click_link "Sign out" }
+			#it { should have_link('Sign in') }
+		# end		
 	end
     it { should have_selector('h1', text: 'Sign Up') } 
     it { should have_selector('title', text: full_title('Sign Up')) } 
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
   end
-
+  
   describe "profile pages" do
   	let(:user) { FactoryGirl.create(:user) }
   	before { visit user_path(user) }
@@ -38,5 +52,4 @@ describe "User Pages" do
   	it { should have_selector('h1', text: user.name) }
   	it { should have_selector('title', text: user.name) }
   end	
-
 end

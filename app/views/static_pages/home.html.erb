@@ -1,6 +1,4 @@
-<% provide(:title, 'Home') %>
-<!DOCTYPE html>
-<html>
+<% provide(:title, 'Home') %> <!-- everything is referenced in application.html -->
 <script type="text/javascript">
       var today = new Date();
       var current_time = today.getHours();
@@ -27,7 +25,6 @@
 <div class = "center hero-unit">
      
 	<h1>Welcome to , Intro to Computer Security</h1>
-<body bgcolor="#E6E6FA">
 	<h2>
 		This is the forum page for CSE 3482   
 		<a href="http://www.eecs.yorku.ca/course_archive/2014-15/W/3482/"> intro to comp sec</a>
@@ -37,11 +34,10 @@
 	
 	<div class="center hero unit">
 		<h3><em>Already a user? Then sign in here</em></h3>
-		<%= link_to "Sign in", '#' , :class=> "btn btn-success" %>
+		<%= link_to "Sign in", signin_path , :class=> "btn btn-success" %>
 	</div>
 	
 </div>
 	
 <%= link_to image_tag("ownlogo.png", :alt => "Nerds") , 'http:///home/richie/Ruby/sample_app/app/assets/images' %>
-</body>
-</html>
+
