@@ -1,20 +1,20 @@
-  <header class= "navbar navbar-fixed-top"> <!--fixed must be changed -->
+  <header class="navbar navbar-default"> <!--fixed must be changed -->
     
-    <div class="navabar-inner">
-      <div class="container">
+    <div class="navabar-fluid">
+      <div class="container-header">
         <% link_to "sample app", root_path , :id => "logo" %>
         <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home",  root_path %></li>
-              <li><%= link_to "Help",   help_path %></li>
+            <ul class="nav navbar -nav pull-right nav nav-pills">
+              <li role="presentation" class="active"><%= link_to "Home",  root_path %></li>
+              <li role="presentation" class="active"><%= link_to "Help",   help_path %></li>
               <!--<li><%= link_to "Sign in",  signin_path %> </li> -->
               <!--<button type ="button" class="btn btn-default navbar-btn">Sign in</button> -->
-             <li><%= link_to "About", 	about_path %></li> 
+             <li role="presentation" class="active"><%= link_to "About", 	about_path %></li> 
              <% if signed_in? %>
-                <li><%= link_to "Users" , '#' %></li>
-                <li id="fat-menu" class="dropdown">
+                <li role="presentation" class="active"><%= link_to "Users" , '#' %></li>
+                <li class="dropdown active" style="color:#050505;">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    Account <b class="caret"></b>
+                    Account  <b class="caret"></b>
                   </a>
                   <ul class="dropdown-menu">
                     <li><%= link_to "Profile", user_path(current_user) %></li>
@@ -33,6 +33,24 @@
       </div>
     </div>
   </header>
+  <!-- jquery code for nav bar problems -->
+  <script>
+    $(window).scroll(
+    {
+        previousTop: 0
+    }, 
+    function () {
+    var currentTop = $(window).scrollTop();
+    if (currentTop < this.previousTop) {
+        $(".sidebar em").text("Up");
+        $(".header").show();
+    } else {
+        $(".sidebar em").text("Down");
+        $(".header").hide();
+    }
+    this.previousTop = currentTop;
+});
+  </script>
   <script>
       $('.dropdown-toggle').dropdown();
     </script>
