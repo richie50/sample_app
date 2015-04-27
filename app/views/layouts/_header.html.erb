@@ -1,28 +1,21 @@
-  <header class="navbar navbar-default"> <!--fixed must be changed -->
-    
-    <div class="navabar-fluid">
-      <div class="container-header">
+  <header> <!--fixed must be changed -->
         <% link_to "sample app", root_path , :id => "logo" %>
-        <nav>
-            <ul class="nav navbar -nav pull-right nav nav-pills">
-              <li role="presentation" class="active"><%= link_to "Home",  root_path %></li>
-              <li role="presentation" class="active"><%= link_to "Help",   help_path %></li>
-              <!--<li><%= link_to "Sign in",  signin_path %> </li> -->
-              <!--<button type ="button" class="btn btn-default navbar-btn">Sign in</button> -->
-             <li role="presentation" class="active"><%= link_to "About", 	about_path %></li> 
+	<div class="menu-wrap">
+        <nav class="menu">
+            <ul class="clearfix">
+              <li><a href="<%=root_path %>">Home</a></li>
+              <li><a href="<%=help_path %>">Help</a></li>
+             <li><a  href="<%=about_path %>">About</a></li> 
              <% if signed_in? %>
-                <li role="presentation" class="active"><%= link_to "Users" , '#' %></li>
-                <li class="dropdown active" style="color:#050505;">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <li><%= link_to "Users" , '#' %></li>
+                <li><a href="#">
                     Account  <b class="caret"></b>
                   </a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to "Profile", user_path(current_user) %></li>
+                  <ul class="sub-menu">
+                    <li><a href="<%= user_path(current_user) %>"><%= @current_user.name %></a></li>
                     <li><%= link_to "Settings", '#' %></li>
                     <li class="divider"></li>
-                    <li>
-                      <%= link_to "Sign out", signout_path, method: "delete"  %>
-                    </li>
+                    <li><%= link_to "Sign out", signout_path, method: "delete"  %></li>
                   </ul>
                 </li>
                 <% else %>
@@ -30,8 +23,7 @@
 		<% end %> 
             </ul>
         </nav>
-      </div>
-    </div>
+	</div>
   </header>
   <!-- jquery code for nav bar problems -->
   <script>

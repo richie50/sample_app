@@ -15,7 +15,7 @@ module SessionsHelper
   def signed_in?
     #note if you dont do the negation of current_user going back to the home page
     #still shows that we are logged in if we access accounts directly
-    #we might not want this in some case because it still shows account link on the homepage
+    #we might not want this in some cases because it still shows account link on the homepage
    !current_user.nil?
   end 
   

@@ -5,8 +5,10 @@ html{
 }
 
 body{
-	padding-top: 50px;
+	padding: 30px;
 	background-image: url("front.jpg");
+	margin: 0px;
+	background-color: #ccc;
 }
 
 section{
@@ -16,6 +18,104 @@ section{
 textarea{
 	resize: vertical;
 }
+/* Style for menu */
+nav{
+	
+}
+@media screen and (min-width: 600px) {
+  .men li {
+    width: 120px;
+    border-bottom: none;
+    height: 150px;
+    line-height: 150px;
+    font-size: 1.4em;
+  }
+}
+ 
+/*nice menu */
+.clearfix:after{
+	display:block;
+	clear: both;
+}
+
+.menu-wrap{
+	width:100%; /*change this for vertical or horizontal menu */
+	box-shadow: 0px 1px 3px rbga(0,0,0,0.2);
+	background: #3e3436;
+}
+.menu{
+	width:100%;
+	margin: 0px auto;
+}
+.menu li{
+	margin: 0px;
+	list-style: 'Ek Mukta';
+	display: inline-block;
+}
+.menu a {
+	transition: all linear 0.15s;
+	color: white;
+}
+
+.menu li:hover > a,.menu .curent-item > a{
+	text-decoration: none;
+	color: #1D16F2;
+}
+.menu .arrow{
+	font-size: 11px;
+	line-height: 0%;
+}
+/* Top level Menu */
+/*----- Top Level -----*/
+.menu > ul > li {
+    display:inline-block;
+    font-size:19px;
+}
+ 
+.menu > ul > li > a {
+    padding:10px 40px;
+    display:inline-block;
+    text-shadow:0px 1px 0px rgba(0,0,0,0.4);
+}
+ 
+.menu > ul > li:hover > a, .menu > ul > .current-item > a {
+    background:#7DF0AF;
+}
+ 
+/*----- Bottom Level -----*/
+.menu li:hover .sub-menu {
+    z-index:1;
+    opacity: 1;
+}
+ 
+.sub-menu {
+    width:160%;
+    padding:5px 0px;
+    position:absolute;
+    top:100%;
+    left:0px;
+    z-index:-1;
+    opacity: 0;
+    transition: opacity linear 0.15s;
+    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
+    background:#7DF0AF;
+}
+ 
+.sub-menu li {
+    display:block;
+    font-size:16px;
+    border-bottom: 1px solid #888; 
+}
+ 
+.sub-menu li a {
+    padding:10px 30px;
+    display:block;
+}
+ 
+.sub-menu li a:hover, .sub-menu .current-item a {
+    background:#3e3436;
+}
+/*end of menu */
 
 .center{
 	text-align: center; /* strict Sass style  with nesting*/
@@ -81,7 +181,6 @@ aside{
 h1 , h2, h3, h4, h5, h6{
 	line-height: 1;
 }
-
 h1{
 	font-size: 4em;
 	letter-spacing: -3px;
