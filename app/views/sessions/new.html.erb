@@ -1,17 +1,18 @@
 <% provide(:title, "Sign in") %>
 <h1> Sign in</h1>
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span6 offset3" id="div_signup">
     <%= form_for(:session, url: sessions_path) do |f| %>
     
     <%= f.label :email %>
     <%= f.text_field :email %>
     
     <%= f.label :password %>
-    <!-- please dont code when you are tired too forever to find this bug instead or password i had email -->
+    <!-- please dont code when you are tired took forever to find this bug instead or password i had email -->
     <%= f.password_field :password %>
-    
+    <center>
     <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+    </center>
     <% end %>
   <p> New User? Then <%= link_to "Sign up now!" , signup_path %> </p>
   </div>

@@ -6,7 +6,7 @@ html{
 
 body{
 	padding-top: 50px;
-	background-color: #b7e9f1;
+	background-image: url("front.jpg");
 }
 
 section{
@@ -106,6 +106,14 @@ p{
 	letter-spacing: 2px;
 	text-align: center;
 }
+.headline_for_h1{
+	font-family:Georgia,serif;
+	color:#4E443C;
+	font-variant: small-caps;
+	ext-transform: none;
+	font-weight: 100;
+	margin-bottom: 0;
+}
 /* header */
 #logo{
 	float: left;
@@ -123,14 +131,15 @@ p{
 }
 /* footer notes */
 $DarkBlue : #1442fb;
+$Green: #F50C81;
 footer{
 	margin-top : 250px;
 	padding-top: 10px;
-	border-top: 2px solid #010606;
-	color: $DarkBlue;
+	border-top: 4px solid #0C27F5;
+	color: $Green;
 }
 footer a{
-	color: $DarkBlue;
+	color: $Green;
 }
 $pink : #FB1436;
 footer a:hover{
@@ -139,15 +148,18 @@ footer a:hover{
 footer small{
 	float: right;
 	padding-top: 2px;
+	color: $Green;
 }
 footer ul{
 	padding-top: 2px;
 	float :left;
 	list-style: none;
+	color: $Green;
 }
 footer ul li{
 	float: left;
 	margin-left: 8px;
+	color: $Green;
 }
 
 /*misc */
@@ -169,7 +181,6 @@ footer ul li{
 }
 
 /* forms */
-
 input, textarea , select, .uneditable-input{
 	//text-align: center;
 	border: 1px solid #bbb;
@@ -180,7 +191,7 @@ input, textarea , select, .uneditable-input{
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	//@include box_sizing;
+	@include box_sizing;
 }
 
 #error_explanation{
@@ -195,7 +206,15 @@ input, textarea , select, .uneditable-input{
 	@extend .control-group;
 	@extend .error;
 }
-
+/* div for Sign up page */
+#div_signup{
+	background-color: #F7EDF2;
+	width: 700px;
+	padding: 50px;
+	border: 10px solid gray;
+	margin-left: auto;
+	margin-right: auto;	
+}
 
 
 

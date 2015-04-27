@@ -40,7 +40,7 @@ describe "User Pages" do
 			#it { should have_link('Sign in') }
 		# end		
 	end
-    it { should have_selector('h1', text: 'Sign Up') } 
+    it { should have_selector('h2', text: 'Sign Up') } 
     it { should have_selector('title', text: full_title('Sign Up')) } 
       # Run the generator again with the --webrat flag if you want to use webrat methods/matchers
   end
