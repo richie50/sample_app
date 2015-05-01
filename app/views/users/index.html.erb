@@ -3,7 +3,7 @@
 <h1 style="color: black ;font-family: 'Trochhi', serif; font-size: 45px;font-weight: normal;line-height: 48px;margin: 0;">All users</h1>
 <br/><br/>
 <div id="div_for_users">
-<%= will_paginate %> <!-- pagination call -->
+
 <ul class="users">
   <% @users.each do |user| %>
   <li>
@@ -16,5 +16,5 @@
 </li>
   <% end %>
 </ul>
-<%= will_paginate %> 
+ 
 </div>
