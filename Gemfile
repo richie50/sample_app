@@ -5,6 +5,10 @@ ruby '1.9.3'
 gem 'rails', '3.2.13'
 gem 'bootstrap-sass' , '2.0.0'
 gem 'bcrypt-ruby' , '3.0.1'
+gem 'faker' , '1.0.1'
+gem 'will_paginate', '~> 3.0.5'
+gem 'bootstrap-will_paginate' , '0.0.6'
+gem 'kaminari'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 group :development, :test do
@@ -12,11 +16,6 @@ gem 'sqlite3' , '1.3.5'
 #gem 'sqlite3'
 gem 'rspec-rails', '2.9.0'
 gem 'annotate', '~> 2.4.1.beta'
-#added to test users
-gem 'faker' , '1.0.1'
-gem 'will_paginate', '~> 3.0.5'
-gem 'bootstrap-will_paginate' , '0.0.6'
-gem 'kaminari'
 
 end
 
