@@ -40,6 +40,9 @@ describe User do
 		
 		it {  should be_admin }
 	end
+ 	
+ 	#attribute accessible test for admin user
+ 	
 	# Tester for remembering tokens
 	describe "remember token" do
 		before { @user.save }
