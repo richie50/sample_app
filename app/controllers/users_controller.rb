@@ -6,8 +6,9 @@ class UsersController < ApplicationController
   def index
     #index page for all user in the database
     #pull out all users from the model with the instance variable
-    #@users = User.paginate(page: params[:page])
-    @users = User.all
+    @users = User.paginate(page: params[:page])
+    #@users = User.all
+    #@users = Kaminari.paginate_array(my_array_object).page(params[:page]).per(10)
   end
   
   def new

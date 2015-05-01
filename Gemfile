@@ -16,6 +16,7 @@ gem 'annotate', '~> 2.4.1.beta'
 gem 'faker' , '1.0.1'
 gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate' , '0.0.6'
+gem 'kaminari'
 
 end
 

@@ -69,4 +69,7 @@ SampleApp::Application.configure do
   
   config.force_ssl = true
   
+  #to deal with pagination error on heroku
+  config.action_controller.perform_caching = false
+  
 end
