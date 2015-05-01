@@ -144,7 +144,7 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     websocket (1.2.1)
-    will_paginate (3.0.3)
+    will_paginate (3.0.7)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -168,4 +168,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.4)
   sqlite3 (= 1.3.5)
   uglifier (>= 1.2.3)
-  will_paginate (= 3.0.3)
+  will_paginate (= 3.0.7)
