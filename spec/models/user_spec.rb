@@ -27,12 +27,19 @@ describe User do
  	#permanent cookies for unique browsing sessions
  	it { should respond_to(:remember_token) }
  	it { should respond_to(:authenticate) }
- 	
- 	
- 	
+	# Test for admin users
+	it { should respond_to(:admin) }
+ 	it { should respond_to(:authenticate) }
+	it { should_not be_admin }
 
  	it { should be_valid }
  	
+ 	describe "with admin attributes set to 'true'" do
+		#please dont forget to add the instance sntax when you are in a block
+		before { @user.toggle!(:admin) }
+		
+		it {  should be_admin }
+	end
 	# Tester for remembering tokens
 	describe "remember token" do
 		before { @user.save }

@@ -23,6 +23,9 @@ module SessionsHelper
     @current_user = user
   end
   
+  def current_user?(user)
+    user == current_user
+  end  
   #this code remembers keeps the session for current user active when he visits another page
   def current_user
      if (user_id = session[:user_id])
@@ -37,7 +40,7 @@ module SessionsHelper
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
     #added 
   end
-  #this might fix the bug where user is remembered after signout
+  #this fixes the bug where user is remembered after signout
 def forget
   user.forget
   cookies.delete(:user_id)
@@ -49,4 +52,15 @@ end
     self.current_user = nil
     cookies.delete(:remember_token)
   end
+  #friendly forwarding
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
+  end
+  
+  def store_location 
+    #remembers where user was before he/she got redirected to sign in page
+    #where request.fullpath is the value
+    session[:return_to] = request.fullpath
+  end    
 end

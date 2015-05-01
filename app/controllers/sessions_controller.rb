@@ -11,7 +11,9 @@ class SessionsController < ApplicationController
       #then user exist give access
       sign_in user
       #remember user
-      redirect_to user
+      #friendly forwarding
+      redirect_back_or user
+      
     else
       flash.now[:error] = 'Invalid email or password'
        render 'new'

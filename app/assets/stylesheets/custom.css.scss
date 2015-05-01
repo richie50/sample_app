@@ -41,25 +41,30 @@ nav{
 .menu-wrap{
 	width:100%; /*change this for vertical or horizontal menu */
 	box-shadow: 0px 1px 3px rbga(0,0,0,0.2);
-	background: #3e3436;
+	background: #CC0AB0;
 }
 .menu{
 	width:100%;
 	margin: 0px auto;
+	
 }
 .menu li{
 	margin: 0px;
 	list-style: 'Ek Mukta';
 	display: inline-block;
+	
+	
 }
 .menu a {
 	transition: all linear 0.15s;
-	color: white;
+	color: #070808;
+	text-decoration: underline;
+	background-color: #D2EFFA;
 }
 
 .menu li:hover > a,.menu .curent-item > a{
 	text-decoration: none;
-	color: #1D16F2;
+	color: black;
 }
 .menu .arrow{
 	font-size: 11px;
@@ -73,13 +78,13 @@ nav{
 }
  
 .menu > ul > li > a {
-    padding:10px 40px;
+    padding:20px 50px;
     display:inline-block;
     text-shadow:0px 1px 0px rgba(0,0,0,0.4);
 }
  
 .menu > ul > li:hover > a, .menu > ul > .current-item > a {
-    background:#7DF0AF;
+    background:#F20FC9;
 }
  
 /*----- Bottom Level -----*/
@@ -88,33 +93,6 @@ nav{
     opacity: 1;
 }
  
-.sub-menu {
-    width:160%;
-    padding:5px 0px;
-    position:absolute;
-    top:100%;
-    left:0px;
-    z-index:-1;
-    opacity: 0;
-    transition: opacity linear 0.15s;
-    box-shadow: 0px 2px 3px rgba(0,0,0,0.2);
-    background:#7DF0AF;
-}
- 
-.sub-menu li {
-    display:block;
-    font-size:16px;
-    border-bottom: 1px solid #888; 
-}
- 
-.sub-menu li a {
-    padding:10px 30px;
-    display:block;
-}
- 
-.sub-menu li a:hover, .sub-menu .current-item a {
-    background:#3e3436;
-}
 /*end of menu */
 
 .center{
@@ -294,7 +272,7 @@ input, textarea , select, .uneditable-input{
 }
 
 #error_explanation{
-	color: #f00;
+	color: #e00;
 	ul{
 		list-style: none;
 		margin: 0 0 20px 0;
@@ -307,17 +285,42 @@ input, textarea , select, .uneditable-input{
 }
 /* div for Sign up page */
 #div_signup{
-	background-color: #F7EDF2;
+	background-color: white;
 	width: 700px;
 	padding: 50px;
-	border: 10px solid gray;
-	margin-left: auto;
-	margin-right: auto;	
+	border: 5px solid rgba(255,255,255,.5);
+	margin-left: 10%;
+	margin-right: 0%;	
 }
 
+#div_for_users{
+	background-color: white;
+	width: 700px;
+	padding: 50px;
+	border: 5px solid rgba(255,255,255,.5);
+	margin-left: 10%;
+	margin-right: 0%;	
+}
+/* users styling */
+.users {
+	list-style: none;
+	margin: 0;
+	li{
+		overflow: auto;
+		padding: 10px;
+		border-top: 5px solid black;
+		&:last-child{
+			border-bottom: 5px solid black;
+		}
+	}
+}
 
-
-
+.example_user{
+	color: #0C0C0C;
+	font-family: algerian;
+	font-style: italic;
+	font-size: large;
+}
 
 
 

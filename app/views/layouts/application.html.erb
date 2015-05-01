@@ -13,6 +13,7 @@
   <%= render 'layouts/header' %>
   <% flash.each do |key, value| %>
     <div class="alert alert-<%= key %>"><%= value %></div>
+    <% flash.clear %>
   <% end %>
   <%= yield %>
   <%= render 'layouts/footer' %>
