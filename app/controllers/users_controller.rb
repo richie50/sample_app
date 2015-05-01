@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     #index page for all user in the database
     #pull out all users from the model with the instance variable
     @users = User.paginate(page: params[:page])
+    #@users = User.all
   end
   
   def new

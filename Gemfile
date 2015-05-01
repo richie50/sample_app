@@ -14,11 +14,10 @@ gem 'rspec-rails', '2.9.0'
 gem 'annotate', '~> 2.4.1.beta'
 #added to test users
 gem 'faker' , '1.0.1'
-gem 'will_paginate', '3.0.7'
+gem 'will_paginate', '~> 3.0.5'
 gem 'bootstrap-will_paginate' , '0.0.6'
 
 end
-
 
 # Gems used only for assets and not required
 # in production environments by default.
