@@ -214,7 +214,7 @@ footer{
     height: auto;
     font-size:12px;
     position:absolute;
-    z-index: 1;
+    /*z-index: 0;*/ 
     width:80%;
     bottom: 0px;
     background-color:#31353a;
@@ -250,7 +250,7 @@ footer ul{
 
 footer > ul > li ul li{
     margin-left:0%;
-    margin-right:0%;
+    margin-right:10%;
     text-transform: uppercase;
     font-weight:bold;
     line-height:1.8;
