@@ -398,8 +398,58 @@ input, textarea , select, .uneditable-input{
 	font: 50px 'Museo700';
 	text-align: left;
 }
+/*micropost styling */
+.microposts{
+	list-style: none;
+	margin: 10px 0 0 0;
+	background-color: white;
+	li{
+		padding: 10px;
+		border-top: 1px solid #e8e8e8;
+	}
+}
+.content{
+	display: block;
+	font-family: fantasy;
+	font-style: normal;
+}
+.timestamp{
+	color: red;
+}
+.gravatar{
+	float: left;
+	margin-right: 10px;
+}
+aside{
+	textarea{
+		height: 100px;
+		margin-bottom: 5px;
+	}
+}
 
-
+.paginate_for_users{
+	background-color: white;
+}
+.richee_feed{
+	margin: 1em 0 0.5em 0;
+	color: #0E2FED;
+	font-weight: normal;
+	font-family: 'Ultra', algerian;   
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+	text-align: center;
+	/* transition*/
+	width: 100px;
+	height: 100px;
+	background: red;
+	-webkit-transition: width 2s;
+	transition: width 2s;
+}
+.richee_feed:hover{
+		width:350px;
+}
 
 
 

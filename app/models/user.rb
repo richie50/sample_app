@@ -15,7 +15,11 @@ class User < ActiveRecord::Base
   #change the order of the fields before saving them in the database
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
-
+ 
+  # A user has many micropost (database assocition) database GOD
+  #destroy dependent tables upon user is not longer in the table
+  has_many :microposts , dependent: :destroy 
+  
   validates(:name, presence: true, length: { maximum: 100 })
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates(:email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }, )

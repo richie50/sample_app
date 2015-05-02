@@ -33,9 +33,11 @@ describe User do
 	it { should_not be_admin }
 
  	it { should be_valid }
- 	
+ 	 # Test for miscropost attributes (association test)
+ 	 it { should respond_to(:microposts) }
+ 	 
  	describe "with admin attributes set to 'true'" do
-		#please dont forget to add the instance sntax when you are in a block
+		#please dont forget to add the instance syntax when you are in a block
 		before { @user.toggle!(:admin) }
 		
 		it {  should be_admin }
@@ -115,7 +117,7 @@ describe User do
  		it { should_not be_valid }
  	end
 
- describe "return value of authenticate method" do
+	 describe "return value of authenticate method" do
  		before { @user.save }
  		let(:found_user) { User.find_by_email(@user.email) }
 
@@ -130,5 +132,27 @@ describe User do
  		specify { user_for_invalid_password.should be_false }
  	
 	end	
- end
+        end
+	
+	describe "micropost associations" do
+		before { @user.save }
+		let!(:older_micropost) do
+			FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
+		end
+		let!(:newer_micropost) do
+			FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
+		end
+		it "should have the right micropost timestamp in the right order" do
+			@user.microposts.should == [newer_micropost, older_micropost]
+		end
+		
+		# Test to verify deleted user must also have the post destroyed
+		it " should destroy associated post" do
+			microposts = @user.microposts
+			@user.destroy
+			microposts.each  do |micropost|
+				Micropost.find_by_id(micropost.id).should be_nil
+			end
+		end	
+	end
 end
