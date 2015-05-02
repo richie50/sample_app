@@ -233,6 +233,7 @@ footer > ul{
     z-index:-1;
     
 }
+/*
 footer > ul > li{
     margin-left:0%;
     margin-right:5%;
@@ -247,15 +248,12 @@ footer ul{
     list-style: none;
 }
 
-/* The links */
-
 footer > ul > li ul li{
     margin-left:0%;
     margin-right:10%;
     text-transform: uppercase;
     font-weight:bold;
     line-height:1.8;
-   /* display: inline-block;*/
     position:relative;
     top: 45px;
 }
@@ -267,10 +265,10 @@ footer > ul > li ul li a{
 
 footer > ul > li ul li a:hover{
     color:#ddd !important;
-}
+}*/
 
 /* The comp Sec logo */
-footer a.logo{
+/*footer a.logo{
     color: #e4e4e4 !important;
     text-decoration: none !important;
     font-size: 14px;
@@ -297,7 +295,6 @@ footer a.logo i{
 footer a.logo:before{
     content: '';
     display: inline-block;
-    background: url('../img/sprite.png') no-repeat -19px -70px;
     width: 48px;
     height: 37px;
     vertical-align: text-top;
@@ -306,7 +303,7 @@ footer a.logo:before{
 
 footer > ul > li:hover p{
     opacity:1;
-}
+} */
 
 
 /*misc */
