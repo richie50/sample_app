@@ -4,6 +4,26 @@
         <button type ="submit" class="btn btn">Submit</button> 
 </form>	-->
 <br/><br/><br/><br/>
+<!-- if the user is signed in render this page else give him the default page -->
+<style>
+        #header{
+                background: white;
+                padding: 15px;
+        }
+</style> 
+<% if signed_in? %>
+      <div class="row" id="header">
+	<aside class="span4">
+	    <section>
+		  <%= render 'shared/user_info' %>
+	    </section>
+	    <section>
+		  <%= render 'shared/micropost_form' %>
+	    </section>
+	</aside>    
+      </div>
+      
+ <% else %>     
 <div class = "center hero-unit">
      
 	<h1 class="headline_for_h1">Welcome to, Operating Systems Forum</h1>
@@ -19,7 +39,6 @@
 		<%= link_to "Sign in", signin_path , :class=> "btn btn-success" %>
 	</div>
 	
-</div>
-	
+</div>	
 <%= link_to image_tag("ownlogo.png", :alt => "Nerds") , 'http:///home/richie/Ruby/sample_app/app/assets/images' %>
-
+<% end %>

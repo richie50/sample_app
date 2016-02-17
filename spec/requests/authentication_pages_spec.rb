@@ -47,8 +47,8 @@ describe "AuthenticationPages" do
       describe "followed by signout" do
         before { click_link "Sign out" }
         it { should have_link('Sign in') }
-      end
-    end  
+        end
+      end  
   end
   
   describe "Authorization" do
@@ -62,7 +62,22 @@ describe "AuthenticationPages" do
           fill_in "Email", with: user.email
           fill_in "Password", with: user.password
           click_button "Sign in"
+         end
+          #micropost testing new
+        describe "in Micropost controller" do
+        
+        describe "submitting create action" do
+          before { post microposts_path }
+          specify { response.should redirect_to(signin_path) }
         end
+        describe "submitting to the create action" do
+          before do
+            micropost = FactoryGirl.create(:micropost)
+            delete micropost_path(micropost)
+          end
+          specify { response.should redirect_to(signin_path) }
+         end
+        end #micropost end
         describe "after signin in" do
           
           it "should render the desired protected page" do
@@ -127,8 +142,6 @@ describe "AuthenticationPages" do
         before { delete user_path(user) }
         specify { response.should redirect_to(root_path) }
       end  
-    end  
-  
-  end
-
+    end   
+  end #autorization
 end

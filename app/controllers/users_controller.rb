@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
    before_filter :signed_in_user, only: [:index, :edit , :update, :destroy]
    before_filter :legit_user, only: [:edit , :update]    
-  before_filter :admin_user, only: :destroy
+   before_filter :admin_user, only: :destroy
   
   def index
     #index page for all user in the database
@@ -63,14 +63,14 @@ class UsersController < ApplicationController
     #code
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
-  def signed_in_user
-    #code allows only authourized individuals to access edit page if not it saves the session
-    unless signed_in?
-      store_location
-      redirect_to signin_path, notice: "Please sign in."
-     end 
-  end
+  #remove to avoid code duplication in check session helper controller
+  #def signed_in_user
+  #  #code allows only authourized individuals to access edit page if not it saves the session
+  #  unless signed_in?
+  #    store_location
+  #    redirect_to signin_path, notice: "Please sign in."
+  #   end 
+  #end
   
    def legit_user
     @user = User.find(params[:id])

@@ -1,6 +1,16 @@
 <% provide(:title, 'About us') %>
-<h1>About us</h1>
-<p>
+ <style>
+        #main{
+                background: white;
+                padding: 15px;
+        }
+        #header{
+                background: white;
+                padding: 15px;
+        }
+     </style> 
+<h1 id="header">About us</h1>
+<p id="main">
 	This my sample_app.<em>Please push to git</em>
 </p>
 <%= link_to image_tag("ownlogo.png", :alt => "Nerds") , 'http:///home/richie/Ruby/sample_app/app/assets/images' %>

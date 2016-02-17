@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
  
-  # A user has many micropost (database assocition) database GOD
-  #destroy dependent tables upon user is not longer in the table
+  # A user has many micropost (database association) database GOD
+  #destroy dependent tables upon user if the user is no longer in the table
   has_many :microposts , dependent: :destroy 
   
   validates(:name, presence: true, length: { maximum: 100 })
